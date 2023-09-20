@@ -1,5 +1,4 @@
 package com.obsquracourse.AutomationTesting;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByLinkText;
 import org.openqa.selenium.WebElement;
@@ -26,8 +25,9 @@ public class Locators extends Base {
 		WebElement checkboxdemo = driver.findElement(By.linkText("Checkbox Demo"));
 		WebElement checkbox = driver.findElement(By.partialLinkText("Checkbox"));
 		WebElement showmessageusingxpath = driver.findElement(By.xpath("//button[@id='button-one']"));
-		
-		
+		WebElement showmessageusingcontains=driver.findElement(By.xpath("//button[contains(@id,'button-one')]"));
+		WebElement showmessageusingand=driver.findElement(By.xpath("//button[@class='btn btn-primary'and @id='button-one']"));
+		WebElement showmessageusingor=driver.findElement(By.xpath("//button[@id='button-one' or button[text()='Show Message']]"));
 		
 		
 		
@@ -36,10 +36,10 @@ public class Locators extends Base {
 		WebElement yourmessageusingcontains=driver.findElement(By.xpath("//div[contains(@id,'message-one')]"));
 		WebElement totaltab=driver.findElement(By.xpath("//div[contains(@id,'message-two')]"));
 		
-		WebElement showmsgtext=driver.findElement(By.xpath("//button[text()='Show Message']"));
+		//using text()
 		
+	     WebElement showmsgtext=driver.findElement(By.xpath("//button[text()='Show Message']"));
 		
-
 		driver.navigate().to("https://www.amazon.in");
 		
 		WebElement searchbutton = driver.findElement(By.id("nav-search-submit-button"));
@@ -83,13 +83,15 @@ public class Locators extends Base {
 		WebElement flipkartlogo = driver.findElement(By.xpath("//img[@title='Flipkart']"));
 		
 		
-		// using name attribute
-	//driver.navigate().to("https://netbanking.hdfcbank.com/netbanking");
-	//	WebElement customerid=driver.findElement(By.name("fldLoginUserId"));
+	
 		
-		driver.navigate().to("https://www.facebook.com/login");
+	driver.navigate().to("https://www.facebook.com/login");
 	WebElement usernme=driver.findElement(By.name("email"));
 	WebElement passwrd=driver.findElement(By.name("pass"));
+	
+	driver.navigate().to("https://demo.guru99.com/test/newtours/");
+	WebElement username=driver.findElement(By.name("userName"));
+	WebElement submitbutton=driver.findElement(By.name("submit"));
 		
 		
        
